@@ -1,11 +1,3 @@
----
-title: 'Analysis of Incident Overpressure Using Python'
-date: 2017-09-23
-permalink: /posts/2012/08/blog-post-4/
-tags:
-- python
-- overpressure
----
 
 This [Jupyter Notebook](http://jupyter.org/) is a research notebook that I use to analyze incident pressure data from a blast.  Table 1 below is the list of the data acquisition (DAC) channels, the distance from the $200\:g$ charge and what is being measured.  If you are interested in obtaining the python code please go to my [Github](https://github.com/lightsquared/Blog/blob/master/Incident%20Pressure%20Analysis/Incident%20Overpressure%20Analysis.ipynb).
 
@@ -358,7 +350,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](/images/output_8_0.png)
+![png](output_8_0.png)
 
 
 ## DC Bias Removal
@@ -389,7 +381,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](/images/output_12_0.png)
+![png](output_12_0.png)
 
 
 ## Peak Pressure and Positive Phase Duration
@@ -424,7 +416,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](/images/output_17_0.png)
+![png](output_17_0.png)
 
 
 Now that we have the peak value we need to find the start of the rise in pressure.  I'm going to define this as the first positive pressure point that occurs if you move from the peak pressure backward in time.  We can find this point by first deleting the data to the right of the peak.
@@ -534,7 +526,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](/images/output_29_0.png)
+![png](output_29_0.png)
 
 
 So now we have the both the pressure 0.033 psi and time 2.566 ms where the pressure goes positive right before the abrupt shoot up to peak pressure.  It would be intresting to find the number points between the start of the positive phase and the peak pressure.  We can do that with the following code,
@@ -640,7 +632,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](/images/output_41_0.png)
+![png](output_41_0.png)
 
 
 Now that we have both the start and end of the positive phase duration we can calculate the duration of the positive phase.
@@ -673,12 +665,12 @@ plt.fill_between(shot_data.index, 0, shot_data[cH],
 
 
 
-    <matplotlib.collections.PolyCollection at 0x1c209b09b0>
+    <matplotlib.collections.PolyCollection at 0x1c1d339cf8>
 
 
 
 
-![png](/images/output_45_1.png)
+![png](output_45_1.png)
 
 
 Now that we have the beginning and ending times of the positive phase we can calculate the impulse using simpson's rule.
@@ -725,7 +717,7 @@ from numpy import exp
 from lmfit import minimize, Parameters, Model
 
 # reset time to zero ms by subtracting t at start of array
-t = shot_data_dc[peak_t:pos_phase_t_end].index.values - shot_data_dc[peak_t:pos_phase_t_end].index.values[0]
+t = shot_data_dc[peak_t:pos_phase_t_end].index.values - shot_data_dc[peak_t:pos_phase_t_end].index.values[0] 
 p = shot_data_dc[peak_t:pos_phase_t_end].values
 
 def friedlander(t, p_s, alpha, t_plus):
@@ -761,34 +753,62 @@ fig, ax = plt.subplots(figsize=(w,h))
 plt.plot(t, p,'b', label='pressure data')
 plt.plot(t, result.init_fit, 'k--', label = 'initial guess')
 fit = plt.plot(t, result.best_fit, 'r-',
-               label= r'$p(t)={} e^{{-{} t}} \left(1-\frac{{t}}{{{}}} \right)$'.format(f_ps,
-                                                                                       f_a,
+               label= r'$p(t)={} e^{{-{} t}} \left(1-\frac{{t}}{{{}}} \right)$'.format(f_ps, 
+                                                                                       f_a, 
                                                                                        f_tp))
 plt.xlabel('Time (ms)')
 plt.ylabel('Pressure (psi)')
 plt.legend()
 ```
 
+    [[Model]]
+        Model(friedlander)
+    [[Fit Statistics]]
+        # fitting method   = leastsq
+        # function evals   = 21
+        # data points      = 2599
+        # variables        = 3
+        chi-square         = 85.1394879
+        reduced chi-square = 0.03279641
+        Akaike info crit   = -8878.91824
+        Bayesian info crit = -8861.32960
+    [[Variables]]
+        p_s:     11.4467781 +/- 0.01289489 (0.11%) (init = 11.01162)
+        alpha:   0.97376494 +/- 0.00660660 (0.68%) (init = 0.35)
+        t_plus:  1.41732445 +/- 0.00491024 (0.35%) (init = 1.32)
+    [[Correlations]] (unreported correlations are < 0.100)
+        C(alpha, t_plus) =  0.872
+        C(p_s, alpha)    =  0.687
+        C(p_s, t_plus)   =  0.404
+    
+               99.73%    95.45%    68.27%    _BEST_    68.27%    95.45%    99.73%
+     p_s   :  -0.03811  -0.02532  -0.01272  11.44678  +0.01274  +0.02536  +0.03811
+     alpha :  -0.01908  -0.01275  -0.00640   0.97376  +0.00644  +0.01292  +0.01945
+     t_plus:  -0.01401  -0.00943  -0.00476   1.41732  +0.00487  +0.00980  +0.01486
 
-    ---------------------------------------------------------------------------
-
-    ModuleNotFoundError                       Traceback (most recent call last)
-
-    <ipython-input-52-6ffe704364a0> in <module>()
-          1 from numpy import exp
-    ----> 2 from lmfit import minimize, Parameters, Model
-          3
-          4 # reset time to zero ms by subtracting t at start of array
-          5 t = shot_data_dc[peak_t:pos_phase_t_end].index.values - shot_data_dc[peak_t:pos_phase_t_end].index.values[0]
 
 
-    ModuleNotFoundError: No module named 'lmfit'
+
+
+    <matplotlib.legend.Legend at 0x1c1da41240>
+
+
+
+
+![png](output_50_2.png)
 
 
 
 ```python
 f_n_pts, f_p_CI_99_minus, f_p_CI_99_plus
 ```
+
+
+
+
+    ('2,599', '11.409', '11.485')
+
+
 
 The non-linear least-square curve fit of the pressure over the time from peak pressure to the end of the positive phase was, n = 2599, 99% CI [11.409, 11.485] (psi).
 
@@ -810,6 +830,61 @@ dataSummaryTable = pd.DataFrame({'Peak P Data (psi)' : peak_p,
 dataSummaryTable
 ```
 
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Peak P Data (psi)</th>
+      <th>Positive Phase Data (ms)</th>
+      <th>Impulse Data (psi-ms)</th>
+      <th>SD (ft/lb^1/3)</th>
+      <th>Weight (lb)</th>
+      <th>Distance (ft)</th>
+      <th>Distance (m)</th>
+      <th>TOA (ms)</th>
+      <th>RT (ms)</th>
+      <th>Sensor</th>
+      <th>Clean Signal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CH 1</th>
+      <td>11.011622</td>
+      <td>1.32</td>
+      <td>5.543122</td>
+      <td>7.899132</td>
+      <td>0.573201</td>
+      <td>6.56168</td>
+      <td>2</td>
+      <td>2.5655</td>
+      <td>0.0215</td>
+      <td>Incident</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 [1] L. Walter, Patrick, “Measuring Static Overpressures in Air Blast Environments, TN-27,” Depew, NY, 2010.
 
 [2] J. M. Dewey, “Measurement of the Physical Properties of Blast Waves,” in Experimental Methods of Shock Wave Research, Cham: Springer International Publishing, 2016, pp. 53–86.
@@ -817,3 +892,7 @@ dataSummaryTable
 [3] G. F. Kinney, K. J. Graham, G. F. Kinney, and K. J. Graham, Explosive shocks in air, 2nd ed. New York: Springer-Verlag New York Inc., 1985.
 
 [4] Newville, M., Stensitzki, T., Allen, D. B., & Ingargiola, A. (2014, September 21). LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python. Zenodo. http://doi.org/10.5281/zenodo.11813
+
+
+
+
