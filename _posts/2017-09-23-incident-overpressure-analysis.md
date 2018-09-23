@@ -350,7 +350,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](output_8_0.png)
+![png](/images/output_8_0.png)
 
 
 ## DC Bias Removal
@@ -381,7 +381,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](output_12_0.png)
+![png](/images/output_12_0.png)
 
 
 ## Peak Pressure and Positive Phase Duration
@@ -416,7 +416,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](output_17_0.png)
+![png](/images/output_17_0.png)
 
 
 Now that we have the peak value we need to find the start of the rise in pressure.  I'm going to define this as the first positive pressure point that occurs if you move from the peak pressure backward in time.  We can find this point by first deleting the data to the right of the peak.
@@ -526,7 +526,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](output_29_0.png)
+![png](/images/output_29_0.png)
 
 
 So now we have the both the pressure 0.033 psi and time 2.566 ms where the pressure goes positive right before the abrupt shoot up to peak pressure.  It would be intresting to find the number points between the start of the positive phase and the peak pressure.  We can do that with the following code,
@@ -632,7 +632,7 @@ plt.ylabel(cH);
 ```
 
 
-![png](output_41_0.png)
+![png](/images/output_41_0.png)
 
 
 Now that we have both the start and end of the positive phase duration we can calculate the duration of the positive phase.
@@ -670,7 +670,7 @@ plt.fill_between(shot_data.index, 0, shot_data[cH],
 
 
 
-![png](output_45_1.png)
+![png](/images/output_45_1.png)
 
 
 Now that we have the beginning and ending times of the positive phase we can calculate the impulse using simpson's rule.
@@ -717,7 +717,7 @@ from numpy import exp
 from lmfit import minimize, Parameters, Model
 
 # reset time to zero ms by subtracting t at start of array
-t = shot_data_dc[peak_t:pos_phase_t_end].index.values - shot_data_dc[peak_t:pos_phase_t_end].index.values[0] 
+t = shot_data_dc[peak_t:pos_phase_t_end].index.values - shot_data_dc[peak_t:pos_phase_t_end].index.values[0]
 p = shot_data_dc[peak_t:pos_phase_t_end].values
 
 def friedlander(t, p_s, alpha, t_plus):
@@ -753,8 +753,8 @@ fig, ax = plt.subplots(figsize=(w,h))
 plt.plot(t, p,'b', label='pressure data')
 plt.plot(t, result.init_fit, 'k--', label = 'initial guess')
 fit = plt.plot(t, result.best_fit, 'r-',
-               label= r'$p(t)={} e^{{-{} t}} \left(1-\frac{{t}}{{{}}} \right)$'.format(f_ps, 
-                                                                                       f_a, 
+               label= r'$p(t)={} e^{{-{}t}} \left(1-\frac{{t}}{{{}}} \right)$'.format(f_ps, 
+                                                                                       f_a,
                                                                                        f_tp))
 plt.xlabel('Time (ms)')
 plt.ylabel('Pressure (psi)')
@@ -780,7 +780,7 @@ plt.legend()
         C(alpha, t_plus) =  0.872
         C(p_s, alpha)    =  0.687
         C(p_s, t_plus)   =  0.404
-    
+
                99.73%    95.45%    68.27%    _BEST_    68.27%    95.45%    99.73%
      p_s   :  -0.03811  -0.02532  -0.01272  11.44678  +0.01274  +0.02536  +0.03811
      alpha :  -0.01908  -0.01275  -0.00640   0.97376  +0.00644  +0.01292  +0.01945
@@ -795,7 +795,7 @@ plt.legend()
 
 
 
-![png](output_50_2.png)
+![png](/images/output_50_2.png)
 
 
 
@@ -892,7 +892,3 @@ dataSummaryTable
 [3] G. F. Kinney, K. J. Graham, G. F. Kinney, and K. J. Graham, Explosive shocks in air, 2nd ed. New York: Springer-Verlag New York Inc., 1985.
 
 [4] Newville, M., Stensitzki, T., Allen, D. B., & Ingargiola, A. (2014, September 21). LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python. Zenodo. http://doi.org/10.5281/zenodo.11813
-
-
-
-
