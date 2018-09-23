@@ -1,11 +1,12 @@
 ---
 title: 'Analysis of Incident Overpressure Using Python'
 date: 2017-09-23
-permalink: /posts/2017/09/analysis-incident-overpressure/
+permalink: /posts/2012/08/blog-post-4/
 tags:
-  - python
-  - overpressure
+- python
+- overpressure
 ---
+
 This [Jupyter Notebook](http://jupyter.org/) is a research notebook that I use to analyze incident pressure data from a blast.  Table 1 below is the list of the data acquisition (DAC) channels, the distance from the $200\:g$ charge and what is being measured.  If you are interested in obtaining the python code please go to my [Github](https://github.com/lightsquared/Blog/blob/master/Incident%20Pressure%20Analysis/Incident%20Overpressure%20Analysis.ipynb).
 
 *Table 1*: DAC Channels Used in a Test Explosion Along with the Distance from the Charge to the Sensor.
