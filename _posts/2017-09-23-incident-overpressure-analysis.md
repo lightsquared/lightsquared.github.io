@@ -6,6 +6,7 @@ tags:
   - incident
   - overpressure
   - friedlander
+  - python
 ---
 
 This [Jupyter Notebook](http://jupyter.org/) is a research notebook that I use to analyze incident pressure data from a blast.  Table 1 below is the list of the data acquisition (DAC) channels, the distance from the $200\:g$ charge and what is being measured.  If you are interested in obtaining the python code please go to my [Github](https://github.com/lightsquared/Blog/blob/master/Incident%20Pressure%20Analysis/Incident%20Overpressure%20Analysis.ipynb).
