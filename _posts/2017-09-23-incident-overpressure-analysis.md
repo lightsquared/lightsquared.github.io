@@ -3,9 +3,7 @@ title: 'Analysis of Incident Overpressure Using Python'
 date: 2017-09-23
 permalink: /posts/2017/09/incident-overpressure-analysis/
 tags:
-  - incident
   - overpressure
-  - friedlander
   - python
 ---
 
