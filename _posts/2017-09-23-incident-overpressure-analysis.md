@@ -752,8 +752,10 @@ print(result.ci_report())
 fig, ax = plt.subplots(figsize=(w,h))
 plt.plot(t, p,'b', label='pressure data')
 plt.plot(t, result.init_fit, 'k--', label = 'initial guess')
+{% raw %}
 equation = r"$p(t)={} e^{{-{}t}} \left(1-\frac{{t}}{{{}}} \right)$"
 fit = plt.plot(t, result.best_fit, 'r-', label = equation.format(f_ps,f_a,f_tp))
+{% endraw %}
 plt.xlabel('Time (ms)')
 plt.ylabel('Pressure (psi)')
 plt.legend()
