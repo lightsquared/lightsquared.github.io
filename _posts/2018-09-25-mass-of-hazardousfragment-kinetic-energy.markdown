@@ -3,7 +3,6 @@ layout: post
 title: "Mass of Hazardous-Fragment Kinetic Energy"
 date: "2018-09-25 09:47:07 -0500"
 mathjax: true
-permalink: /posts/2018/09/hazardous-fragment/
 tags:
   - hazardous
   - fragment
