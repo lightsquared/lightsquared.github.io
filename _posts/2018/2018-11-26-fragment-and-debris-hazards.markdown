@@ -10,7 +10,7 @@ categories:
   - engineering
 ---
 
-When the [United States Department of Defense Explosives Safety Board (DDESB)](https://www.denix.osd.mil/ddes/home/) determines fragment and debris hazards they use a 6-step process based on [Technical Paper 12](http://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Other/10-F-0806_Fragment_and_Debris_Hazards.pdf) (TP-12).  In summary, this process finds the range $R$ at which there is a probability $p$ of a person with an area $A_T=0.58\:m^2$ $(6.24\:ft^2)$ being struck by a fragment with a mass $m$ and kinetic energy $E_{CR}=58\:ft{\text -} lb\: \left( 79\:J \right)$.  The process is,
+When the [United States Department of Defense Explosives Safety Board (DDESB)](https://www.denix.osd.mil/ddes/home/) determines fragment and debris hazards they use a 6-step process based on [Technical Paper 12](http://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Other/10-F-0806_Fragment_and_Debris_Hazards.pdf) (TP-12).  In summary, this process finds the range $R$ at which there is a probability $p$ of a person with an area $A_T=0.58\,m^2$ $(6.24\,ft^2)$ being struck by a fragment with a mass $m$ and kinetic energy $E_{CR}=58\,ft{\text -} lb\, \left( 79\,J \right)$.  The process is,
 
 1.  Determine initial fragment velocity either using the appropriate Gurney equations (or determine experimentally).
 
@@ -23,7 +23,7 @@ whichever gives the smaller value of $m$.  The critical level of kinetic energy,
 $L_1=\frac{2\left(k^2m\right)^{\frac{1}{2}}}{C_D\rho}$<br/><br/>
 where $m$ is the fragment mass, $k$ is a shape factor, and $C_D$ is the coefficient of drag.
 
-4.  Determine the areal<sup id="a1">[1](#f1)</sup> density of fragments heavier than $m$ reaching distance $R$ from the inverse-square law and the Mott distribution:<br/><br/>
+4.  Determine the areal (relating to the area of something) density of fragments heavier than $m$ reaching distance $R$ from the inverse-square law and the Mott distribution:<br/><br/>
 $q = \left(\frac{Q_0}{R^2}\right)e^{-\left(\frac{2m}{m_0}\right)^{1/2}}$<br/><br/>
 where $Q_0$ is the number of fragments emitted from the bomb per unit solid angle,<br/><br/>
 and the exponent term is the Mott distribution.
@@ -429,7 +429,7 @@ Rerunning the code above for all four probabilities we have the following hazard
 | 10%                | 37             | 0.000319  |
 | 25%                | 23             | 0.000223  |
 | 50%                | 14             | 0.000177  |
-<b name="f1">1</b> Relating to the area of something. [↩](#a1)
+
 # References
 1.  T. A. Zaker, “Fragment and Debris Hazards (TP-12),” Washington, D.C., 1975.
 2.  D. Brown, “Tracker 5.0” Open Source Physics, 2018.
