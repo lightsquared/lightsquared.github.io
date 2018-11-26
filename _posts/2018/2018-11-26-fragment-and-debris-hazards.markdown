@@ -11,7 +11,6 @@ categories:
   - engineering
 ---
 
-# Estimating Fragment and Debris Hazards
 When the [United States Department of Defense Explosives Safety Board (DDESB)][9615d5d6] determines fragment and debris hazards they use a 6-step process based on [Technical Paper 12][1096b4d4] (TP-12).  In summary, this process finds the range $R$ at which there is a probability $p$ of a person with an area $A_T=0.58\:m^2$ $(6.24\:ft^2)$ being struck by a fragment with a mass $m$ and kinetic energy $E_{CR}=58\:ft{\text -} lb\: \left( 79\:J \right)$.  The process is,
 
 [1096b4d4]: http://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Other/10-F-0806_Fragment_and_Debris_Hazards.pdf "Fragment and Debris Hazards"
