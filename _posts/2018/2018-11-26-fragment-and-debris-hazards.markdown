@@ -399,6 +399,7 @@ else:
     C_D = 0.8
     rho = 0.076 # lb/ft
     v_0 = 1063 # ft/sec
+
     g   = 32.2 # ft/sec^2
     A_T = 6.24 # ft^2
     N_T = 104
@@ -429,6 +430,8 @@ Rerunning the code above for all four probabilities we have the following hazard
 | 10%                | 37             | 0.000319  |
 | 25%                | 23             | 0.000223  |
 | 50%                | 14             | 0.000177  |
+
+The Jupyter Notebook file is available [here](/_jupyter/publish_HFD.ipynb).
 
 # References
 1.  T. A. Zaker, “Fragment and Debris Hazards (TP-12),” Washington, D.C., 1975.

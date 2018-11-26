@@ -891,7 +891,7 @@ dataSummaryTable
 </table>
 </div>
 
-
+The Jupyter Notebook file is available [here](_jupyter/incident_overpressure_analysis.ipynb).
 
 [1] L. Walter, Patrick, “Measuring Static Overpressures in Air Blast Environments, TN-27,” Depew, NY, 2010.
 
