@@ -23,7 +23,7 @@ $$
 
 where $Z$ is the scaled distance in $\frac{ft}{lb^{1/3}}$ $\left(\frac{m}{kg^{1/3}}\right)$.  This is "easy" because the *test explosive pressure* is equal to the *TNT equivalent of test explosive* (a straight line), see Figure 1.  You know (it's your test) the scaled distance of the test explosive $Z_{test}$ and can calculate the $Z_{TNT}$ from the *test explosive pressure* and the Kingery Bulmash equations. This however is not the case for scaled impulse.
 
-![TNT Equivalent for Pressure](images/tnt_equiv_press.png)
+![TNT Equivalent for Pressure](/images/tnt_equiv_press.png)
 
 **Figure 1 - Plot of pressure vs. scaled distance showing the line of constant pressure.  The scaled distance is then read for the "Test Explosive Pressure" and the "TNT Equivalent of Test Explosive".**
 
@@ -291,7 +291,7 @@ ax.set_xlabel(r'$Scaled\:Distance,\:Z\:\left(\frac{ft}{lb^{1/3}}\right)$')
 ax.set_ylabel(r'$Scaled\:Impulse,\:Y\:\left(\frac{psi-ms}{lb^{1/3}}\right)$');
 ```
 
-![TNT Equivalent for Scaled Impulse](images/kb_ii_plot.png)
+![TNT Equivalent for Scaled Impulse](/images/kb_ii_plot.png)
 
 **Figure 2 - Plot of scaled impulse vs. scaled distance showing the line of constant impulse.  The scaled distance is then read for the "Test Explosive Pressure" and the "TNT Equivalent of Test Explosive".**
 
