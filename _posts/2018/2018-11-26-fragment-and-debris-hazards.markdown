@@ -17,9 +17,9 @@ When the [United States Department of Defense Explosives Safety Board (DDESB)](h
 2.  Estimate the average fragment mass $m_0$ and number of fragments $Q_0$ by fitting the Mott distribution to a single-weapon arena test.
 
 3.  Determine the mass $m$ of the lightest hazardous fragment reaching a specified distance $R$ either from the solution of:<br/><br/>
-$2E_{cr}=mV^2e^{\left( \frac{-2R}{L_1m^{\frac{1}{3}}}\right)}\qquad(no\:gravity)$ <br/><br/>or from the solution of:<br/><br/>
-$2E_{cr}=gL_1m^{\frac{4}{3}}\qquad(terminal\:velocity)$<br/><br/>
-whichever gives the smaller value of $m$.  The critical level of kinetic energy, $E_{cr}$, at impact is defined as $58\:ft{\text -}lb\: \left( 79\:J \right)$ and $L_1$ is defined as:<br/><br/>
+$2E_{cr}=mV^2e^{\left( \frac{-2R}{L_1m^{\frac{1}{3}}}\right)}\qquad(no\,gravity)$ <br/><br/>or from the solution of:<br/><br/>
+$2E_{cr}=gL_1m^{\frac{4}{3}}\qquad(terminal\,velocity)$<br/><br/>
+whichever gives the smaller value of $m$.  The critical level of kinetic energy, $E_{cr}$, at impact is defined as $58\,ft{\text -}lb\, \left( 79\,J \right)$ and $L_1$ is defined as:<br/><br/>
 $L_1=\frac{2\left(k^2m\right)^{\frac{1}{2}}}{C_D\rho}$<br/><br/>
 where $m$ is the fragment mass, $k$ is a shape factor, and $C_D$ is the coefficient of drag.
 
@@ -295,7 +295,7 @@ print(result.fit_report())
     [[Correlations]] (unreported correlations are < 0.100)
         C(MT, m0) =  0.980
 
-**For parameter (2) the average fragment mass collected is $63\:\pm\:1.8\:g$ and parameter (3) the total number of fragments is $6908\:\pm\:159$.**  We can now plot the data and the fitted Mott distribution,
+**For parameter (2) the average fragment mass collected is $63\,\pm\,1.8\,g$ and parameter (3) the total number of fragments is $6908\,\pm\,159$.**  We can now plot the data and the fitted Mott distribution,
 
 ```python
 dely = result.eval_uncertainty(sigma=3)
@@ -318,10 +318,10 @@ ax1.set_ylabel('Cumulative Fraction $(m\geq m_{dist})$');
 ## Simultaneously Solve Equations - Parameters (4), (5), and (6)
 For parameters (4) and (5) we will be specifying them based on conservative values,
 
-$$k=162.9\:lb/ft^3$$
+$$k=162.9\,lb/ft^3$$
 $$C_D=0.8$$
 
-Parameter (6) the probability of being struck by a hazardous fragment will be solved for $p=1\%,\:10\%,\:25\%$, and $50\%$.  The code to solve simultaneous equations is,
+Parameter (6) the probability of being struck by a hazardous fragment will be solved for $p=1\%,\,10\%,\,25\%$, and $50\%$.  The code to solve simultaneous equations is,
 
 ```python
 from scipy.optimize import fsolve
