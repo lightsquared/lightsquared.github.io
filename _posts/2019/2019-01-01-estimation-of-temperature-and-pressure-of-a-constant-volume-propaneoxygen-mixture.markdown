@@ -7,7 +7,15 @@ tags:
 - equivalency
 - pressure
 - temperature
+feature-img: "/images/bleve.png"
 ---
+
+<article>
+  {% if page.feature-img %}
+    <img class="feature-image" src={{ page.feature-img }} alt="Feature Image"/>
+  {% endif %}
+  <section class="post-content">{{ content }}</section>
+</article>
 
 A recent project required a first-order approximation to determine if an explosive gas mixture would result in a tank rupture.  The following analysis done in Python and follows Coopers analysis <sup>[1](#myfootnote1)</sup>  It provides a reasonable approximation, however it is sensitive to the chemical reaction hierarchy assumed.  The jupyter notebook used to perform this analysis is [here](https://github.com/lightsquared/jupyter_notebooks/blob/master/tank_burst_analysis.ipynb).
 
