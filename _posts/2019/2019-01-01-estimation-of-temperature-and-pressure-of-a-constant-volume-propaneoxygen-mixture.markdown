@@ -7,7 +7,7 @@ tags:
 - equivalency
 - pressure
 - temperature
-featured-image: /images/bleve.png
+featured-image: images/bleve.png
 featured-image-alt: boiling liquid expanding vapor explosion
 ---
 
