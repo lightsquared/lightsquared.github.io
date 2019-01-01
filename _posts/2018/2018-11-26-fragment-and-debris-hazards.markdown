@@ -10,7 +10,7 @@ categories:
   - engineering
 ---
 
-When the [United States Department of Defense Explosives Safety Board (DDESB)](https://www.denix.osd.mil/ddes/home/) determines fragment and debris hazards they use a 6-step process based on [Technical Paper 12](http://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Other/10-F-0806_Fragment_and_Debris_Hazards.pdf) (TP-12).  In summary, this process finds the range $R$ at which there is a probability $p$ of a person with an area $A_T=0.58\,m^2$ $(6.24\,ft^2)$ being struck by a fragment with a mass $m$ and kinetic energy $E_{CR}=58\,ft{\text -} lb\, \left( 79\,J \right)$.  The process is,
+When the [United States Department of Defense Explosives Safety Board (DDESB)](https://www.denix.osd.mil/ddes/home/) determines fragment and debris hazards they use a 6-step process based on [Technical Paper 12](http://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Other/10-F-0806_Fragment_and_Debris_Hazards.pdf) (TP-12) <sup>[1](#myfootnote1)</sup>.  In summary, this process finds the range $R$ at which there is a probability $p$ of a person with an area $A_T=0.58\,m^2$ $(6.24\,ft^2)$ being struck by a fragment with a mass $m$ and kinetic energy $E_{CR}=58\,ft{\text -} lb\, \left( 79\,J \right)$.  The process is,
 
 1.  Determine initial fragment velocity either using the appropriate Gurney equations (or determine experimentally).
 
@@ -87,7 +87,7 @@ def read_data(file,skip):
 
 ## Initial Fragment Velocity - Parameter (1)
 
-The initial fragment speed can be determined from high-speed camera footage.  In this analysis two cameras were used to collect fragment speed data.  Using the Tracker software [[2]](https://physlets.org/tracker/) fragment speed can be calculated using the distance traveled (calibrated from a reference length in the video) and the number of frames the fragment was tracked.  Loading this data stored in "comma-separated values" CSV files and plotting a histogram of the velocities measured we can see an outlier in the upper range but with no skewness.
+The initial fragment speed can be determined from high-speed camera footage.  In this analysis two cameras were used to collect fragment speed data.  Using the Tracker <sup>[2](#myfootnote2)</sup> software fragment speed can be calculated using the distance traveled (calibrated from a reference length in the video) and the number of frames the fragment was tracked.  Loading this data stored in "comma-separated values" CSV files and plotting a histogram of the velocities measured we can see an outlier in the upper range but with no skewness.
 
 
 ```python
@@ -190,11 +190,11 @@ result.describe()
 
 **For parameter (1) the initial velocity is, $n=122$, $95\% CI$ $(1112\pm423)ft/s$.**
 
-There are times when it is not possible to conduct an arena test [[3]](http://www.dtic.mil/dtic/tr/fulltext/u2/629767.pdf) to experimentally determine fragment speeds.  In those cases the fragment speed can be determined from a wonderful series of formulas developed by Gurney [[4]](http://www.dtic.mil/dtic/tr/fulltext/u2/a800105.pdf).  Gurney's equation(s) convert the energy in the expanding detonation gases into the kinetic energy of the case fragments.  Gurney's equations assume a linear speed profile and a uniform but time-varying pressure and density in the detonation gases.  The Gurney Equation is given by:
+There are times when it is not possible to conduct an arena test <sup>[3](#myfootnote3)</sup> to experimentally determine fragment speeds.  In those cases the fragment speed can be determined from a wonderful series of formulas developed by Gurney <sup>[4](#myfootnote4)</sup>.  Gurney's equation(s) convert the energy in the expanding detonation gases into the kinetic energy of the case fragments.  Gurney's equations assume a linear speed profile and a uniform but time-varying pressure and density in the detonation gases.  The Gurney Equation is given by:
 
 $$V_0=\frac{\sqrt{2E}}{\left(M/C)+n/(n+2)\right)}$$
 
-where $\sqrt{2E}$ is the experimentally determined gurney-energy, which is specific for an explosive, $M/C$ is the case-metal to charge ratio, and $n$ is a geometry-symmetry-factor for plane $(n=1)$, cylinderical $(n=2)$, spherical $(n=3)$ configurations.  The plot below shows the variation of the metal velocity normalized with the gurney energy, $\sqrt{2E}$, as a function of $\left(M/C\right)$ [[5]](http://dtic.mil/dtic/tr/fulltext/u2/783941.pdf).  This plot shows that at small $M/C$ (small case weight compared to charge weight) the geometry of the bomb effects the fragment velocity.
+where $\sqrt{2E}$ is the experimentally determined gurney-energy, which is specific for an explosive, $M/C$ is the case-metal to charge ratio, and $n$ is a geometry-symmetry-factor for plane $(n=1)$, cylinderical $(n=2)$, spherical $(n=3)$ configurations.  The plot below shows the variation of the metal velocity normalized with the gurney energy, $\sqrt{2E}$, as a function of $\left(M/C\right)$ <sup>[5](#myfootnote5)</sup>.  This plot shows that at small $M/C$ (small case weight compared to charge weight) the geometry of the bomb effects the fragment velocity.
 
 
 ```python
@@ -216,7 +216,7 @@ ax1.set_ylabel(r'$\frac{V_0}{\sqrt{2E}}$');
 ![Normalized Fragment Velocity vs. Charge Shape](/images/3b_shape_vel.png)
 
 
-The table below from Jacobs shows typical values for the Gurney Energy where the value of $A$ is an arbitrary dimensionless constant replacing $(n/n+1)$ [[5]](http://dtic.mil/dtic/tr/fulltext/u2/783941.pdf).
+The table below from Jacobs shows typical values for the Gurney Energy where the value of $A$ is an arbitrary dimensionless constant replacing $(n/n+1)$ <sup>[5](#myfootnote5)</sup>.
 
 | High Explosive (HE)               | Best Estimate (ft/sec) A = 0.5 | Best Estimate (ft/sec) A = 0.3 | HE Density (g/cc) |
 |-----------------------------------|--------------------------------|--------------------------------|-------------------|
@@ -237,7 +237,7 @@ The table below from Jacobs shows typical values for the Gurney Energy where the
 
 ## Mass Distribution - Parameters (2) and (3)
 
-Fragment mass distributions are typically presented as a cumulative distribution function (CDF) i.e. the number of fragments $N$ heavier than mass $m$.  The common analytical solution to this distribution is the Mott distribution [[6]](http://rspa.royalsocietypublishing.org/content/189/1018/300).
+Fragment mass distributions are typically presented as a cumulative distribution function (CDF) i.e. the number of fragments $N$ heavier than mass $m$.  The common analytical solution to this distribution is the Mott distribution <sup>[6](#myfootnote6)</sup>.
 
 $$N=\left(\frac{M_T}{m_0}\right)e^{-\left(\frac{2m}{m_0}\right)^{1/2}}$$
 
@@ -295,7 +295,7 @@ print(result.fit_report())
     [[Correlations]] (unreported correlations are < 0.100)
         C(MT, m0) =  0.980
 
-**For parameter (2) the average fragment mass collected is $63\,\pm\,1.8\,g$ and parameter (3) the total number of fragments is $6908\,\pm\,159$.**  We can now plot the data and the fitted Mott distribution,
+For parameter (2) the average fragment mass collected is $63\,\pm\,1.8\,g$ and parameter (3) the total number of fragments is $6908\,\pm\,159$.**  We can now plot the data and the fitted Mott distribution,
 
 ```python
 dely = result.eval_uncertainty(sigma=3)
@@ -431,12 +431,17 @@ Rerunning the code above for all four probabilities we have the following hazard
 | 25%                | 23             | 0.000223  |
 | 50%                | 14             | 0.000177  |
 
-The Jupyter Notebook file is available [here](/_jupyter/publish_HFD.ipynb).
+The Jupyter Notebook file is available [here](https://github.com/lightsquared/jupyter_notebooks/blob/master/publish_HFD.ipynb).
 
 # References
-1.  T. A. Zaker, “Fragment and Debris Hazards (TP-12),” Washington, D.C., 1975.
-2.  D. Brown, “Tracker 5.0” Open Source Physics, 2018.
-3.  Picatinny Arsenal, “Fragmentation Testing Procedures,” Dover, NJ, 1950.
-4.  R. W. Gurney, “The Initial Velocities of Fragments from Bombs, Shells, and Grenades,” Aberdeen Proving Ground, MD, 1947.
-5.  S. J. Jacobs, “The Gurney Formula: Variations on a Theme by Lagrange,” Silver Spring, MD, 1974.
-6.  N. F. Mott, “Fragmentation of shell cases,” Proc. R. Soc. London. Ser. A. Math. Phys. Sci., vol. 189, no. 1018, p. 300 LP-308, May 1947.
+<a name="myfootnote1">1</a>. T. A. Zaker, “Fragment and Debris Hazards (TP-12),” Washington, D.C., 1975.
+
+<a name="myfootnote2">2</a>. D. Brown, “Tracker 5.0” Open Source Physics, 2018.
+
+<a name="myfootnote3">3</a>. Picatinny Arsenal, “Fragmentation Testing Procedures,” Dover, NJ, 1950.
+
+<a name="myfootnote4">4</a>. R. W. Gurney, “The Initial Velocities of Fragments from Bombs, Shells, and Grenades,” Aberdeen Proving Ground, MD, 1947.
+
+<a name="myfootnote5">5</a>. S. J. Jacobs, “The Gurney Formula: Variations on a Theme by Lagrange,” Silver Spring, MD, 1974.
+
+<a name="myfootnote6">6</a>. N. F. Mott, “Fragmentation of shell cases,” Proc. R. Soc. London. Ser. A. Math. Phys. Sci., vol. 189, no. 1018, p. 300 LP-308, May 1947.

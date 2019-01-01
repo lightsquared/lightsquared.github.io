@@ -537,7 +537,7 @@ plt.ylabel(cH);
 ![png](/images/output_29_0.png)
 
 
-So now we have the both the pressure 0.033 psi and time 2.566 ms where the pressure goes positive right before the abrupt shoot up to peak pressure.  It would be intresting to find the number points between the start of the positive phase and the peak pressure.  We can do that with the following code,
+So now we have the both the pressure 0.033 psi and time 2.566 ms where the pressure goes positive right before the abrupt shoot up to peak pressure.  It would be interesting to find the number points between the start of the positive phase and the peak pressure.  We can do that with the following code,
 
 
 ```python
@@ -709,7 +709,7 @@ f_dataImpulse
 
 The impulse is 5.543 psi-ms.
 
-The next step is to apply the Friedlander equation from the peak to the end of the positive phase.  This will allow for an improved estimation of the peak pressure as, according to the manufacturer (PCB) pressure transducers the transducers can overshoot due high frequency noise in the blast wave and excite the structural resonance of the housed quartz transduction element.  At peak overpressures above about one atmosphere,  the Friedlander equation is no longer able to describe accurately the pressure time-histories, and it is necessary to introduce another coefficient, α, in a modified version of the equation. [1][2][3]
+The next step is to apply the Friedlander equation from the peak to the end of the positive phase.  This will allow for an improved estimation of the peak pressure as, according to the manufacturer (PCB) pressure transducers the transducers can overshoot due high frequency noise in the blast wave and excite the structural resonance of the housed quartz transduction element.  At peak overpressures above about one atmosphere,  the Friedlander equation is no longer able to describe accurately the pressure time-histories, and it is necessary to introduce another coefficient, α, in a modified version of the equation. <sup>[1](#myfootnote1)</sup> <sup>[2](#myfootnote2)</sup> <sup>[3](#myfootnote3)</sup>
 
 So, the modified Frielander equation is,
 
@@ -717,7 +717,7 @@ $$p(t)=P_s e^{-\alpha t} \left(1-\frac{t}{t^+} \right)$$
 
 where $p$ is the overpressure at a fixed location, $P_s$ is the peak overpressure immediately behind the primary shock, $\alpha$ is a new parameter used for shocks over $1\:atm$ and, $t^+$ is the positive duration.
 
-We can esimate the values for $P_s$, $\alpha$, and $t^+$ using a non-linear curve fit.
+We can esimate the values for $P_s$, $\alpha$, and $t^+$ using a non-linear curve fit <sup>[4](#myfootnote4)</sup>.
 
 
 ```python
@@ -891,12 +891,12 @@ dataSummaryTable
 </table>
 </div>
 
-The Jupyter Notebook file is available [here](_jupyter/incident_overpressure_analysis.ipynb).
+The Jupyter Notebook file is available [here](https://github.com/lightsquared/jupyter_notebooks/blob/master/incident_overpressure_analysis.ipynb).
 
-[1] L. Walter, Patrick, “Measuring Static Overpressures in Air Blast Environments, TN-27,” Depew, NY, 2010.
+<a name="myfootnote1">1</a>. L. Walter, Patrick, “Measuring Static Overpressures in Air Blast Environments, TN-27,” Depew, NY, 2010.
 
-[2] J. M. Dewey, “Measurement of the Physical Properties of Blast Waves,” in Experimental Methods of Shock Wave Research, Cham: Springer International Publishing, 2016, pp. 53–86.
+<a name="myfootnote2">2</a>. J. M. Dewey, “Measurement of the Physical Properties of Blast Waves,” in Experimental Methods of Shock Wave Research, Cham: Springer International Publishing, 2016, pp. 53–86.
 
-[3] G. F. Kinney, K. J. Graham, G. F. Kinney, and K. J. Graham, Explosive shocks in air, 2nd ed. New York: Springer-Verlag New York Inc., 1985.
+<a name="myfootnote3">3</a>. G. F. Kinney, K. J. Graham, G. F. Kinney, and K. J. Graham, Explosive shocks in air, 2nd ed. New York: Springer-Verlag New York Inc., 1985.
 
-[4] Newville, M., Stensitzki, T., Allen, D. B., & Ingargiola, A. (2014, September 21). LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python. Zenodo. http://doi.org/10.5281/zenodo.11813
+<a name="myfootnote4">4</a>. Newville, M., Stensitzki, T., Allen, D. B., & Ingargiola, A. (2014, September 21). LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python. Zenodo. http://doi.org/10.5281/zenodo.11813

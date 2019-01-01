@@ -304,4 +304,4 @@ print('The impulse TNT equivalency is {:2.4f}'.format(EI))
 
     The impulse TNT equivalency is 0.7329
 
-The Jupyter Notebook file is available [here](/_jupyter/flash_powder_impulse.ipynb).
+The Jupyter Notebook file is available [here](https://github.com/lightsquared/jupyter_notebooks/blob/master/impulse.ipynb).
