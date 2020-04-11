@@ -1,0 +1,11 @@
+---
+title: "Harmonization without Loss"
+collection: publications
+permalink: /publication/2010-10-01-paper-title-number-6
+excerpt: 'In the U.S., the storage of commercial explosives is regulated by the Bureau of Alcohol, Tobacco, Firearms, and Explosives (BATFE, more commonly known as ATF).'
+date: 2018-09-10
+venue: 'MSIAC 2018 Improved Explosives and Munitions Risk Management Workshop'
+paperurl: 'https://www.msiac.nato.int/news/announcing-the-msiac-improved-explosives-and-munitions-risk-management-iemrm-workshop'
+citation: 'Tatom, J. W., & McNeill, S. K. (2018). Harmonization without Loss. In MSIAC 2018 Improved Explosives and Munitions Risk Management Workshop. Grandada, Spain: Munitions Safety Information Analysis Center.'
+---
+In the U.S., the storage of commercial explosives is regulated by the Bureau of Alcohol, Tobacco, Firearms, and Explosives (BATFE, more commonly known as ATF). For such storage, ATF uses the American Table of Distances (ATD, or TOD) for their Quantity-Distance (QD) rules. These QD rules refer to “High Explosives” and “Low Explosives” rather than the United Nations (UN) hazard division/classification system. In recent years, ATF has been considering harmonizing their standards to more closely match what the U.S. Department of Defense (DoD) does for QD rules, at least in the high/low designation. Such harmonization is generally a positive development.  However, a familiarity with both QD and hazard classification suggests that the rules and assumptions of one discipline might not translate directly to another. For example, hazard classification designations intended for transportation situations may seem misleading if applied to storage situations, with completely different details, such as quantity, confinement, initiation mechanisms, etc.  Therefore, it is important to discuss what one community (storage) does with the same explosives that another community (transportation) has “classified” for a different purpose. In such a discussion, considerations can be made such that a harmonization effort does not unintentionally lose some good aspect of the old high/low designation system while transitioning to a new system. The end goal would be a more standardized system, but also one that is appropriately designed for the intended application.

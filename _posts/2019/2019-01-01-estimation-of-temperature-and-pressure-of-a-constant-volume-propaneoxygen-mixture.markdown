@@ -289,12 +289,10 @@ $\displaystyle \Delta h_{TNT} = -4559.84 J/g$
 
 If we divide the heat of exposion of propane calculated above by the weight of the propane-oxygen mixture we have,
 
-
 ```python
-d_h_exp = d_H_exp/wt_tot
-display(Math(r'\Delta h_{{exp}} = {:.02f~P}'.format(d_h_exp)))
+d_h_exp = d_H_exp/wt_tnt
+display(Math(r'\Delta h_{{TNT}} = {:.02f~P}'.format(d_h_exp)))
 ```
-
 
 $\displaystyle \Delta h_{exp} = -5088.53 J/g$
 

@@ -1,0 +1,11 @@
+---
+title: "Iron Warrior 4 and Technical Paper 21"
+collection: publications
+permalink: /publication/2010-10-01-paper-title-number-8
+excerpt: 'When presented with the opportunity to “piggy-back” on the Iron Warrior IV test, the Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF) worked with Institute of Makers of Explosives (IME) to sponsor a debris recovery effort.'
+date: 2018-08-06
+venue: '2018 International Explosives Safety Symposium & Exposition'
+paperurl: 'https://ndiastorage.blob.core.usgovcloudapi.net/ndia/2018/intexpsafety/Tatom2Paper.pdf'
+citation: 'Tatom, J. W., McNeill, S. K., & Conway, R. (2018). Iron Warrior 4 and Technical Paper 21. In 2018 International Explosives Safety Symposium & Exposition. San Diego, CA: DTIC.'
+---
+When presented with the opportunity to “piggy-back” on the Iron Warrior IV test, the Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF) worked with Institute of Makers of Explosives (IME) to sponsor a debris recovery effort. This effort, which was intended to support the Institute of Makers of Explosives Safety Analysis for Risk (IMESAFR) model, was conducted in accordance with Department of Defense (DoD) recommended debris recovery practices, which are documented in Department of Defense Explosives Safety Board (DDESB) Technical Paper 21 (TP-21).  Iron Warrior IV was sponsored by the National Ground Intelligence Center (NGIC), conducted by the U.S. Army Corps of Engineers Engineer Research and Development Center (ERDC), and held at Dugway Proving Grounds (DPG). The debris recovery effort, which was supported by ATF, DoD, IME, and APT Research, Inc. (APT), lasted two weeks and cataloged tens of thousands of pieces of debris. This debris catalog can be used for multiple purposes, including anchoring the truck potential explosion site (PES) model in IMESAFR to higher charge weights than previously available.  IMESAFR was also used to predict the debris throw ranges ahead of the shot, which allowed the design of a debris collection grid, which was used by the debris recovery team after the shot.

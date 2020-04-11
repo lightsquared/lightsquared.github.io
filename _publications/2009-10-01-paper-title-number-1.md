@@ -1,15 +1,11 @@
 ---
-title: "Paper Title Number 1"
+title: "Risk Criteria for Quantitative Risk Assessment"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+excerpt: 'Quantitative Risk Assessment (QRA) can be specifically tailored for use by the commercial explosives industry to calculate risk to employees and the public...'
+date: 2019-11-01
+venue: 'International Society of Explosive Engineers'
+paperurl:
+citation: 'Hoffman, S., & McNeill, S. (2019). &quot;Risk Criteria for Quantitative Risk Assessment&quote;. In 46th Annual Conference on Explosives and Blasting Technique. Denver, CO: <i>International Society of Explosives Engineers</i>.' 
 ---
-This paper is about the number 1. The number 2 is left for future work.
-
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
-
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+Quantitative Risk Assessment (QRA) can be specifically tailored for use by the commercial explosives industry to calculate risk to employees and the public from commercial explosives facilities and operations. This paper also discusses acceptable risk criteria for this assessment methodology.
