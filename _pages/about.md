@@ -14,4 +14,4 @@ When I’m not doing research, I spend my time working as Chief of the Explosive
 
 When I’m not doing those things, I’m probably hanging out with my wife and kids. I also enjoy fly fishing in Northern Alabama.
 
-Before moving to Huntsville, AL, I worked at the TEDAC.
+Before moving to Huntsville, AL.
